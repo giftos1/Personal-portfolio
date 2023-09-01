@@ -9,14 +9,22 @@
     scroll-behavior: smooth;
 }
 
+:root {
+    --text-color: rgb(212, 233, 252);
+    --body-color: rgb(8,6,43);
+    --icon-color: rgb(123, 135, 161);
+    --hover-color: rgb(66, 142, 224);
+}
+
 body {
-    background-color: rgb(151, 163, 179);
+    /* background-color: rgb(151, 163, 179); */
+    background: rgb(8,6,43);
 }
 
 .bar {
     width: 25px;
     height: 3px;
-    background-color: rgb(66, 71, 71);
+    background-color: var(--text-color);
     margin-bottom: 5px;
     transition: .3s;
 }
@@ -46,19 +54,33 @@ section {
     width: 100%;
     z-index: 1;
     height: 50px;
+    color: var(--text-color);
 }
 
 .logo {
     height: 50px;
     display: flex;
     align-items: center;
+    transition: opacity .5s ease-in;
+    opacity: 0;
 }
 
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo.fade-in {
+    opacity: 1;
+}
 .icons {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 10px;
+}
+
+.name:hover, .job-title:hover, .links {
+    color: var(--hover-color);
 }
 
 .outer-circle {
@@ -74,8 +96,10 @@ section {
 .inner-circle {
     height:33px;
     width: 35px;
-    background-color: rgb(151, 163, 179);
-    color: rgb(21, 69, 122);
+    background-color: var(--body-color);
+    color: rgb(66, 142, 224);
+    /* color: rgb(21, 69, 122); */
+    /* color: var(--text-color); */
     position: relative;
     border-radius: 50%;
     display: flex;
@@ -96,10 +120,10 @@ section {
     align-items: center;
     row-gap: 15px;
     transition: .5s;
-    background-color: rgba(116, 138, 150, 0.466);
+    background-color: var(--body-color);
     width: 80%;
     border-radius: 20px;
-    border: 1px solid rgb(62, 70, 71);
+    border: 1px solid rgb(249, 250, 250);
     right: -120%;
     position: relative;
     height: 100vh;
@@ -112,22 +136,44 @@ section {
     row-gap: 80px;
 }
 
-a:hover {
-   color: rgb(140, 213, 236); 
-}
-
 #welcome-section {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-direction: column;
 }
 
-#welcome-text {
-    font-size: 3rem;
-    text-align: center;
+
+.home-container {
+    margin-left: 40px;
+    width: 50%;
 }
 
+.welcome-text {
+    font-size: 2.7rem;
+    color: var(--text-color);
+    opacity: 0;
+    transition: left .8s linear;
+    position: relative;
+    left: -120%;
+}
+
+.welcome-text.preparation{
+    opacity: 1;
+    left: 0;
+}
+
+.welcome-description {
+    text-align: justify;
+    color: var(--text-color);
+    transition: left .8s linear;
+    position: relative;
+    left: -120%;
+}
+
+.welcome-description.preparation {
+    left: 0;
+}
 
 #contacts {
     height: 100vh;
@@ -137,15 +183,14 @@ a:hover {
     text-align: center;
     padding: 20px 0;
     font-size: 2rem;
+    color: var(--text-color);
 }
 
 
 .projects-container {
-    display: flex;
-    flex-flow: wrap;
-    padding: 10px;
-    justify-content: center;
-    align-content: center;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
 }
 
 .project-container{ 
@@ -156,6 +201,7 @@ a:hover {
     margin: 30px;
     text-align: center;
     transition: 0.3s ease-in-out;
+    color: var(--text-color);
 }
 
 .project img{
@@ -176,17 +222,48 @@ a:hover {
     display: none;
 }
 
+.hidden-links a:hover {
+    color: rgb(0, 217, 255);
+}
+    
+
+#skills {
+    display:inline-flex;
+    justify-content: center;
+    align-items: center; 
+    column-gap: 10px;
+}
+
+.social-icons {
+    font-size: 2em;
+    margin: 20px 0;
+    width: fit-content;
+    color: rgb(123, 135, 161);
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.social-icons.preparation {
+    opacity: 1;
+}
+
+a:visited {
+    color: inherit;
+}
+
+.fa-brands:hover, .fa-solid:hover {
+    color: aliceblue;
+}
+
+.brands-container {
+    color: var(--icon-color);
+    font-size: 2em;
+}
+
+
 @media screen and (min-width: 768px) {
     .menu_bar {
       display: none;
-    }
-
-    .navbar {
-        background-color: aliceblue;
-    }
-
-    .logo .inner-circle{
-        background-color: aliceblue;
     }
 
     .navbar .hidden-links {
@@ -205,6 +282,14 @@ a:hover {
     .navbar.active {
         display: flex;
         flex-direction: column;
-        height: 95vh;
+        height: 90vh;
+    }
+
+    .home-container {
+        width:70%;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
     }
 }
