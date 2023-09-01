@@ -1,5 +1,5 @@
 
-const menuBar = document.querySelector('.menu_bar');
+const menuBar = document.querySelector('.menu-bar');
 const bar = document.querySelector('.bar');
 const navBar = document.querySelector('.navbar');
 const links = document.querySelector('.links');
@@ -8,12 +8,15 @@ const welcome = document.querySelector('.welcome-text');
 const socialIcons = document.querySelector('.social-icons');
 const welcomeDescription = document.querySelector('.welcome-description');
 const logo = document.querySelector('.logo');
+const hiddenLinks = document.querySelector('.hidden-links');
 
 window.onload = function () {
     welcome.classList.toggle('preparation');
     socialIcons.classList.toggle('preparation');
     welcomeDescription.classList.toggle('preparation');
     logo.classList.toggle('fade-in');
+    hiddenLinks.classList.toggle('active');
+    menuBar.classList.toggle('fade-in');
 }
 
 function toggleActive() {
@@ -39,10 +42,6 @@ function removeMenu() {
         toggleActive();
     }
 }
-
-// window.addEventListener("load", function() {
-//     alert("Hey!");
-//   })
 
 menuBar.addEventListener('click', toggleMenu);
 links.addEventListener('click', removeMenu);
