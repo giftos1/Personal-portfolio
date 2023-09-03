@@ -11,11 +11,15 @@ const logo = document.querySelector('.logo');
 const hiddenLinks = document.querySelector('.hidden-links');
 
 window.onload = function () {
-    welcome.classList.toggle('preparation');
-    socialIcons.classList.toggle('preparation');
-    welcomeDescription.classList.toggle('preparation');
+    onLoadAnimations();
+}
+
+function onLoadAnimations() {
+    welcome.classList.toggle('left-animation');
+    socialIcons.classList.toggle('fade-in');
+    welcomeDescription.classList.toggle('left-animation');
     logo.classList.toggle('fade-in');
-    hiddenLinks.classList.toggle('active');
+    hiddenLinks.classList.toggle('top-animation');
     menuBar.classList.toggle('fade-in');
 }
 
