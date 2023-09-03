@@ -9,7 +9,8 @@
 </head>
 <body id="body">
     <header>
-        <div class="navbar">
+        <nav class="navbar">
+            <!-- custom logo -->
             <div class="icons">
                 <div class="logo">
                     <div class="outer-circle">
@@ -19,12 +20,13 @@
                         </div>
                     </div>
                 </div>
+                <!-- Hamburger menu -->
                 <div class="menu-bar">
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
                 </div>
-                    
+                   <!--revealed on screens > 768px  -->
                 <div class="hidden-links">
                     <li><a href="#welcome-section">Home</a></li>
                     <li><a href="#projects">Projects</a></li>
@@ -32,19 +34,21 @@
                     <li><a href="#skills">Skills</a></li>
                 </div>
             </div>
+                <!-- revealed when hamburger menu is clicked -->
                 <ul class="links">
                     <li><a href="#welcome-section">Home</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contacts">Contact Me</a></li>
                     <li><a href="#skills">Skills</a></li>
                 </ul>
-        </div>
+            </nav>
     </header>
 
+    <!-- Home page -->
     <section id="welcome-section" class="section">
         <div class="home-container">
             <p class="welcome-text">
-                <span style="font-size: 1.5rem;">Hi,</span> <span class="name">I'm Gift</span> <br> 
+                <span style="font-size: 1.5rem;">Hi, I'm</span> <span class="name"> Ogingo Gift </span> <br> 
                 <span style="font-size: 2rem;">A</span>
                 <span class="job-title">front end developer</span>
             </p>
@@ -66,42 +70,140 @@
             </div>
         </div>
     </section>
+
+    <!-- Projects -->
     <section id="projects" class="section">
         <div class="projects-title">
             Projects
         </div>
         <div class="projects-container">
-            <div class="project_container">
+            <div class="project-container">
                 <div class="project travel-tracker">
                     <a href="https://github.com/giftos1/TravelTrackerPart1" target="_blank">
                         <img src="./images/travel-tracker.png" alt="Travel Tracker Picture">
                         <h2 class="project-title">
                             Travel Tracker
                         </h2>
-                    </a>  
+                    </a>
+                </div>
+                
+                <div class="project-description">
+                    <div class="read-more">
+                        <p>Read more <span><i class="fa-solid fa-arrow-right"></i></span></p>  
+                    </div>
+                    <article>
+                        <ul>
+                            <li>This program is a simple "travel tracker" that allows a user to track places they wish to visit and places they have already visited.</li>
+
+                            <li>It is written in python 3.</li>
+                            
+                            <li>The program reads and writes a list of places in a text file, and each place has: name, country, priority, whether it is visited (v) or unvisited (n).</li>
+                            
+                            <li>Users can choose to see the list of places, including the total number of places and unvisited places.</li>
+                            
+                            <li>The list will be sorted by visited status then by priority (decreasing number).</li>
+                            
+                            <li>Users can add new places and mark places as visited.</li>
+                            
+                            <li>They cannot change places from visited to unvisited.</li>
+                        </ul>
+                    </article>
+                    <div class="project-button">
+                        <a href="https://github.com/giftos1/javascriptProjects/blob/master/CaesarsCipher.js" target="_blank" class="button">
+                            live demo
+                        </a>
+                        <a href="https://github.com/giftos1/javascriptProjects/blob/master/CaesarsCipher.js" target="_blank" class="button">
+                            source code
+                        </a>
+                    </div>     
                 </div>
             </div>
-            <div class="project_container">
-                <div class="project Survey Form">
+
+            <div class="project-container">
+                <div class="project survey-form">
                     <a href="https://giftos1.github.io/Survey-Form/" target="_blank">
                         <img src="./images/form.jpg" alt="survey form picture">
                         <h2 class="project-title">
                             Survey Form
                         </h2>
-                    </a>
+                    </a>      
                 </div>
+
+                <div class="project-description">
+                    <div class="read-more">
+                        <p>Read more <span><i class="fa-solid fa-arrow-right"></i></span></p>  
+                    </div>
+                    <article>
+                        <ul>
+                            <li>This program is a simple "travel tracker" that allows a user to track places they wish to visit and places they have already visited.</li>
+
+                            <li>It is written in python 3.</li>
+                            
+                            <li>The program reads and writes a list of places in a text file, and each place has: name, country, priority, whether it is visited (v) or unvisited (n).</li>
+                            
+                            <li>Users can choose to see the list of places, including the total number of places and unvisited places.</li>
+                            
+                            <li>The list will be sorted by visited status then by priority (decreasing number).</li>
+                            
+                            <li>Users can add new places and mark places as visited.</li>
+                            
+                            <li>They cannot change places from visited to unvisited.</li>
+                        </ul>
+                    </article>
+
+                    <div class="project-button">
+                        <a href="https://github.com/giftos1/javascriptProjects/blob/master/CaesarsCipher.js" target="_blank" class="button">
+                            live demo
+                        </a>
+                        <a href="https://github.com/giftos1/javascriptProjects/blob/master/CaesarsCipher.js" target="_blank" class="button">
+                            source code
+                        </a>
+                    </div>     
+                </div>  
             </div>
-            <div class="project_container">
+
+            <div class="project-container">
                 <div class="project BMI-Calculator"> 
                     <a href="https://giftos1.github.io/BMI-calculator/" target="_blank">
                         <img src="./images/calculator.jpg" alt="BMI Calculator Picture">
                         <h2 class="project-title">
                             BMI Calculator
                         </h2>
-                    </a>   
+                    </a> 
                 </div>
+                <div class="project-description">
+                    <div class="read-more">
+                        <p>Read more <span><i class="fa-solid fa-arrow-right"></i></span></p>  
+                    </div>
+                    <article>
+                        <ul>
+                            <li>This program is a simple "travel tracker" that allows a user to track places they wish to visit and places they have already visited.</li>
+
+                            <li>It is written in python 3.</li>
+                            
+                            <li>The program reads and writes a list of places in a text file, and each place has: name, country, priority, whether it is visited (v) or unvisited (n).</li>
+                            
+                            <li>Users can choose to see the list of places, including the total number of places and unvisited places.</li>
+                            
+                            <li>The list will be sorted by visited status then by priority (decreasing number).</li>
+                            
+                            <li>Users can add new places and mark places as visited.</li>
+                            
+                            <li>They cannot change places from visited to unvisited.</li>
+                        </ul>
+                    </article>
+                    <div class="project-button">
+                        <a href="https://github.com/giftos1/javascriptProjects/blob/master/CaesarsCipher.js" target="_blank" class="button">
+                            live demo
+                        </a>
+                        <a href="https://github.com/giftos1/javascriptProjects/blob/master/CaesarsCipher.js" target="_blank" class="button">
+                            source code
+                        </a>
+                    </div>     
+                </div>     
             </div>
-            <div class="project_container">
+
+            <div class="project-container">
                 <div class="project">
                     <a href="https://giftos1.github.io/Javascript-Quote-Generator/" target="_blank">
                         <img src="./images/quote-generator.png" alt="Quote Generator Picture">
@@ -110,18 +212,81 @@
                         </h2>
                     </a>
                 </div>
+                <div class="project-description">
+                    <div class="read-more">
+                        <p>Read more <span><i class="fa-solid fa-arrow-right"></i></span></p>  
+                    </div>
+                    <article>
+                        <ul>
+                            <li>This program is a simple "travel tracker" that allows a user to track places they wish to visit and places they have already visited.</li>
+
+                            <li>It is written in python 3.</li>
+                            
+                            <li>The program reads and writes a list of places in a text file, and each place has: name, country, priority, whether it is visited (v) or unvisited (n).</li>
+                            
+                            <li>Users can choose to see the list of places, including the total number of places and unvisited places.</li>
+                            
+                            <li>The list will be sorted by visited status then by priority (decreasing number).</li>
+                            
+                            <li>Users can add new places and mark places as visited.</li>
+                            
+                            <li>They cannot change places from visited to unvisited.</li>
+                        </ul>
+                    </article>
+                    <div class="project-button">
+                        <a href="https://github.com/giftos1/javascriptProjects/blob/master/CaesarsCipher.js" target="_blank" class="button">
+                            live demo
+                        </a>
+                        <a href="https://github.com/giftos1/javascriptProjects/blob/master/CaesarsCipher.js" target="_blank" class="button">
+                            source code
+                        </a>
+                    </div>     
+                </div>  
             </div>
-            <div class="project_container">
+
+            <div class="project-container">
                 <div class="project cipher">
                     <a href="https://github.com/giftos1/javascriptProjects/blob/master/CaesarsCipher.js" target="_blank">
                         <img src="./images/Caesars Cipher.png" alt="Code image">
-                        <h2 class="project-title">
-                            Caesars Cipher
-                        </h2>
-                    </a>    
+                    </a>
+                    <h2 class="project-title">
+                        Caesars Cipher
+                    </h2>
                 </div>
+                <div class="project-description">
+                    <div class="read-more">
+                        <p>Read more <span><i class="fa-solid fa-arrow-right"></i></span></p>  
+                    </div>
+                    <article>
+                        <ul>
+                            <li>This program is a simple "travel tracker" that allows a user to track places they wish to visit and places they have already visited.</li>
+
+                            <li>It is written in python 3.</li>
+                            
+                            <li>The program reads and writes a list of places in a text file, and each place has: name, country, priority, whether it is visited (v) or unvisited (n).</li>
+                            
+                            <li>Users can choose to see the list of places, including the total number of places and unvisited places.</li>
+                            
+                            <li>The list will be sorted by visited status then by priority (decreasing number).</li>
+                            
+                            <li>Users can add new places and mark places as visited.</li>
+                            
+                            <li>They cannot change places from visited to unvisited.</li>
+                        </ul>
+                    </article>
+                    <div class="project-button">
+                        <a href="https://github.com/giftos1/javascriptProjects/blob/master/CaesarsCipher.js" target="_blank" class="button">
+                            live demo
+                        </a>
+                        <a href="https://github.com/giftos1/javascriptProjects/blob/master/CaesarsCipher.js" target="_blank" class="button">
+                            source code
+                        </a>
+                    </div>     
+                </div>      
             </div>
+
         </div>
+
     </section>
     <section id="contacts" class="section">
         Contact form
