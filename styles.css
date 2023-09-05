@@ -35,6 +35,13 @@ body {
 
 }
 
+/* #welcome-section {
+    background-image: url('./images/clouds.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+} */
+
 section {
     padding-top: 50px;
 }
@@ -194,7 +201,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    row-gap: 40px;
+    row-gap: 60px;
     flex-direction: column;
 }
 
@@ -203,8 +210,8 @@ section {
     justify-content: center;
     align-items: center;
     height: 400px;
-    column-gap: 10px;
-    border: 2px solid rgb(149, 149, 189);
+    column-gap: 20px;
+    /* border: 2px solid rgb(149, 149, 189); */
     width: 90%;
 }
 
@@ -221,6 +228,7 @@ section {
     row-gap: 20px;
     font-size: 1.1rem;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* border: 1px solid rgb(64, 54, 158); */
 }
 
 .project img{
@@ -229,6 +237,12 @@ section {
 
 .project img:hover {
     border: 1px solid rgb(243, 243, 243);
+}
+
+.reveal-description .tech-container {
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgb(75, 125, 185);
 }
 
 .project-button a {
@@ -295,20 +309,49 @@ a:visited {
 }
 
 .read-more {
-    color: white;
+    color: var(--text-color);
     font-size: 1rem;
 }
 
-.read-more i {
+.fa-arrow-right {
     font-size: 1rem;
+    animation-name: translate-arrow;
+    animation-duration: 1.1s;
+    animation-iteration-count: infinite;
+    /* transition: transform .3s;  */
+}
+
+.fa-arrow-right.reveal {
+   animation-iteration-count: 0;
+   transform: rotate(90deg);
+}
+
+.reveal-description {
+    visibility: collapse;
+    height: 0;
+    opacity: 0;
+    transition: opacity .4s, height .4s;
+}
+
+.read-more p{
+    display: inline-block;
+}
+
+.read-text {
+    width: 80px;
+}
+
+@keyframes translate-arrow {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(1px);
+    }
 }
 
 
 @media screen and (min-width: 769px) {
-    .menu-bar {
-      display: none;
-    }
-
     .navbar .hidden-links {
         display: flex;
         column-gap: 8vw;
@@ -316,12 +359,12 @@ a:visited {
         font-size: 1.5rem;
     }
 
-    .links.active {
+    .links.active, .menu-bar, .read-more, .reveal-description {
         display: none;
     }
 
-    .read-more {
-        display: none;
+    .section.active {
+        opacity: 1;
     }
 }
 
@@ -340,6 +383,7 @@ a:visited {
     .project-container {
         display: block;
         height: auto;
+        width: 280px;
     }
 
     .project-description article{
@@ -348,5 +392,10 @@ a:visited {
 
     .project {
         margin-bottom: 10px;
+    }
+
+    .project-description {
+        font-size: 1.05rem;
+        text-align: center;
     }
 }
