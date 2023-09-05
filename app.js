@@ -9,6 +9,9 @@ const socialIcons = document.querySelector('.social-icons');
 const welcomeDescription = document.querySelector('.welcome-description');
 const logo = document.querySelector('.logo');
 const hiddenLinks = document.querySelector('.hidden-links');
+const rightArrows = document.querySelectorAll('.fa-arrow-right');
+const readMores = document.querySelectorAll('.read-text');
+const reveals= document.querySelectorAll('.reveal-description');
 
 window.onload = function () {
     onLoadAnimations();
@@ -49,3 +52,26 @@ function removeMenu() {
 
 menuBar.addEventListener('click', toggleMenu);
 links.addEventListener('click', removeMenu);
+
+for (let i = 0; i < reveals.length; i++) {
+    rightArrows[i].addEventListener('click', function() {
+        if (!rightArrows[i].classList.contains('reveal')) {
+            readMores[i].textContent="Read less";
+            rightArrows[i].classList.toggle('reveal');
+            reveals[i].style.opacity="1";
+            reveals[i].style.height="125px";
+            reveals[i].style.visibility="visible";
+
+        } else {
+            readMores[i].textContent="Read more";
+            rightArrows[i].classList.toggle('reveal');
+            reveals[i].style.opacity="0";
+            reveals[i].style.height="0";
+            reveals[i].style.visibility="hidden";
+        }
+    }) 
+}
+
+
+   
+        
