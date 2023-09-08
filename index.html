@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/3f441a95fd.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("IsW8_CceYyNW6nbD3");
+   })();
+</script>
     <title>Personal Portfolio</title>
 </head>
 <body id="body">
@@ -339,25 +347,33 @@
 
     </section>
     <section id="contacts" class="section">
-        Contact form
+        <form action="#contacts" id="contact-form" onsubmit="sendMail()">
+            <div class="form-container">
+                <div class="contacts-heading">
+                    <h1>Contact Me</h1>
+                    <p>Please fill in the details below</p>
+                </div>
+                
+                <div class="form-group" id="form-input">
+                    <label for="name" id="name-label"><input type="text" id="name" placeholder="Your name" required></label>
+                    <label for="mail" id="mail-label"><input type="email" id="email" placeholder="Your email" required></label>
+                    <label for="message" id="message-label">Your Message <textarea cols="70" rows="7" placeholder="Enter your message here..." id="message" required></textarea></label>
+                </div>
+
+                <div class="form-group" id="submit">
+                    <input type="submit" value="send">
+                </div>
+            </div>
+        </form>
+        
     </section>
     <section id="skills" class="section">
-        <div class="brands-container">
-            <i class="fa-brands fa-python"></i>
-            <p>python</p>
-            <i class="fa-brands fa-square-js"></i>
-            <p>Javascript</p>
-            <i class="fa-brands fa-html5"></i>
-            <p>HTML 5</p>
-            <i class="fa-brands fa-css3"></i>
-            <p>CSS 3</p>
-            <i class="fa-brands fa-aws"></i>
-            <p>AWS</p>
-            <i class="fa-brands fa-node"></i>
-            <p>Node js</p>
-        </div>
     </section>
-
+    <footer id="footer">
+        <div class="footer-container">
+            <p class="footer-text"> &copy Gifto 2023</p>
+        </div>
+    </footer>
     <script src="app.js"></script>
 </body>
 </html>
