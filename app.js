@@ -13,6 +13,8 @@ const rightArrows = document.querySelectorAll('.fa-arrow-right');
 const readMores = document.querySelectorAll('.read-text');
 const reveals= document.querySelectorAll('.reveal-description');
 
+
+
 window.onload = function () {
     onLoadAnimations();
 }
@@ -48,6 +50,26 @@ function removeMenu() {
     if (links.classList.contains("active")) {
         toggleActive();
     }
+}
+
+function sendMail() {
+    let templateParams = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value,
+    }
+    const serviceID = "service_k76odi8";
+    const templateID = "template_qf0rmz5";
+
+    emailjs.send(serviceID, templateID, templateParams).then(
+        res => {
+            document.getElementById('name').value ="";
+            document.getElementById('email').value ="";
+            document.getElementById('message').value ="";
+            console.log(res);
+            alert("Your message has been sent successfully");
+        }
+    ).catch((error) => console.log(error));
 }
 
 menuBar.addEventListener('click', toggleMenu);
