@@ -145,7 +145,6 @@ section {
     flex-direction: column;
 }
 
-
 .home-container {
     margin-left: 40px;
     width: 400px;
@@ -155,14 +154,9 @@ section {
     font-size: 2.7rem;
 }
 
-.welcome-text.left-animation, .welcome-description.left-animation{
-    left: 0;
-    opacity: 1;
-}
-
 .welcome-description, .welcome-text {
     color: var(--text-color);
-    transition: left 1s ease-in-out, opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out, left 1s ease-in-out;
     position: relative;
     left: -100px;
     opacity: 0;
@@ -170,6 +164,11 @@ section {
 
 .welcome-description {
     text-align: justify;
+}
+
+.welcome-description.left-animation, .welcome-text.left-animation{
+    left: 0;
+    opacity: 1;
 }
 
 #contacts {
@@ -183,23 +182,40 @@ section {
     color: var(--text-color);
 }
 
+.tech-title {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.stack-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px; 
+}
+
+.tech-stack {
+    /* background-color: rgb(32, 66, 95); */
+    /* display: inline-block; */
+    color: rgb(126, 126, 228);
+}
 
 .projects-container {
     display: flex;
     align-items: center;
     justify-content: center;
     row-gap: 60px;
-    flex-direction: column;
+    flex-wrap: wrap;
+    column-gap: 40px;
 }
 
 .project-container{ 
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 400px;
-    column-gap: 20px;
     /* border: 2px solid rgb(149, 149, 189); */
-    width: 90%;
+    padding: 20px;
+    column-gap: 40px;
+    width: 700px;
 }
 
 .project {
@@ -216,6 +232,12 @@ section {
     font-size: 1.1rem;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* border: 1px solid rgb(64, 54, 158); */
+}
+
+.project-description article {
+    width: 280px;
+    text-align: center;
+    /* border: 1px solid red; */
 }
 
 .project img{
@@ -250,8 +272,8 @@ section {
 
 .hidden-links, .logo, .menu-bar {
     opacity: 0;
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-    transform: translateY(-30px);
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    transform: translateY(-50px);
 }
 
 .hidden-links a:hover {
@@ -261,14 +283,6 @@ section {
 .hidden-links.top-animation, .logo.top-animation, .menu-bar.top-animation {
     transform: translateY(0);
     opacity: 1;
-}
-    
-
-#skills {
-    display:inline-flex;
-    justify-content: center;
-    align-items: center; 
-    column-gap: 10px;
 }
 
 .social-icons {
@@ -342,8 +356,8 @@ a:visited {
     place-items: center;
     border: 2px solid rgb(195, 195, 214);
     width: 95%;
-    padding: 30px 0;
-    /* height: 80%; */
+    padding: 60px 0;
+    border-radius: 15px;
 }
 
 .form-container {
@@ -351,8 +365,12 @@ a:visited {
     place-items: center;
 }
 
-.form-group label {
+.form-group input, textarea {
     margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+#message-label {
     margin-left: 20px;
 }
 
@@ -373,6 +391,7 @@ a:visited {
     font-size: 17px;
 }
 
+
 textarea, input {
     letter-spacing: 1px;
     width: 90%;
@@ -380,7 +399,6 @@ textarea, input {
 
 textarea::placeholder {
     color: var(--text-color);
-    
 }
 
 textarea {
@@ -409,7 +427,12 @@ label, textarea {
 }
 
 .contacts-heading h1 {
-    font-size: 3em;
+    font-size: 35px;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: var(--text-color);
+    -webkit-background-clip: text;
 }
 
 input[type=submit] {
@@ -417,6 +440,7 @@ input[type=submit] {
     height: 40px;
     font-size: 1.5em;
     border: 1px solid var(--text-color);
+    border-radius: 40px;
     background-color: var(--body-color);
     color: var(--text-color);
     transition: background-color .2s ease-in;
@@ -450,10 +474,16 @@ input[type=submit]:hover {
     }
 }
 
-
 @media screen and (min-width: 900px) {
     #contact-form {
         width: 800px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+    .project-container {
+        flex-direction: column;
+        width: 480px;
     }
 }
 
@@ -472,8 +502,6 @@ input[type=submit]:hover {
     .section.active {
         opacity: 1;
     }
-
-    
 }
 
 @media screen and (max-width:768px) {
@@ -489,9 +517,12 @@ input[type=submit]:hover {
     }
 
     .project-container {
-        display: block;
-        height: auto;
-        width: 280px;
+        flex-direction: column;
+        width: 300px;
+    }
+
+    .projects-container {
+        flex-direction: column;
     }
 
     .project-description article{
@@ -505,9 +536,5 @@ input[type=submit]:hover {
     .project-description {
         font-size: 1.05rem;
         text-align: center;
-    }
-
-    .navbar .hidden-links {
-        display: none;
     }
 }
