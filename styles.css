@@ -22,11 +22,6 @@ body {
     background: rgb(8,6,43);
 }
 
-.menu-bar {
-    opacity: 0;
-    transition: opacity .5s ease-in;
-}
-
 .bar {
     width: 25px;
     height: 3px;
@@ -75,16 +70,10 @@ section {
     height: 50px;
     display: flex;
     align-items: center;
-    transition: opacity .5s ease-in;
-    opacity: 0;
 }
 
 .logo:hover {
     transform: scale(1.05);
-}
-
-.logo.fade-in, .menu-bar.fade-in {
-    opacity: 1;
 }
 
 .icons {
@@ -164,26 +153,23 @@ section {
 
 .welcome-text {
     font-size: 2.7rem;
-    color: var(--text-color);
-    transition: left .8s linear;
-    position: relative;
-    left: -120%;
 }
 
-.welcome-text.left-animation{
+.welcome-text.left-animation, .welcome-description.left-animation{
     left: 0;
+    opacity: 1;
+}
+
+.welcome-description, .welcome-text {
+    color: var(--text-color);
+    transition: left 1s ease-in-out, opacity 1s ease-in-out;
+    position: relative;
+    left: -100px;
+    opacity: 0;
 }
 
 .welcome-description {
     text-align: justify;
-    color: var(--text-color);
-    transition: left .8s linear;
-    position: relative;
-    left: -120%;
-}
-
-.welcome-description.left-animation {
-    left: 0;
 }
 
 #contacts {
@@ -261,18 +247,20 @@ section {
     background-color: rgb(134, 173, 245);
     color: rgb(255, 255, 255);
 }
-.hidden-links {
-    display: none;
-    transition: all .5s ease-in;
-    transform: translateY(-140%);
+
+.hidden-links, .logo, .menu-bar {
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    transform: translateY(-30px);
 }
 
 .hidden-links a:hover {
     color: rgb(0, 217, 255);
 }
 
-.hidden-links.top-animation {
+.hidden-links.top-animation, .logo.top-animation, .menu-bar.top-animation {
     transform: translateY(0);
+    opacity: 1;
 }
     
 
@@ -517,5 +505,9 @@ input[type=submit]:hover {
     .project-description {
         font-size: 1.05rem;
         text-align: center;
+    }
+
+    .navbar .hidden-links {
+        display: none;
     }
 }
