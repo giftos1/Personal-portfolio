@@ -12,7 +12,8 @@ const hiddenLinks = document.querySelector('.hidden-links');
 const rightArrows = document.querySelectorAll('.fa-arrow-right');
 const readMores = document.querySelectorAll('.read-text');
 const reveals= document.querySelectorAll('.reveal-description');
-
+const html = document.querySelector('html');
+const body = document.querySelector('body');
 
 
 window.onload = function () {
@@ -23,9 +24,9 @@ function onLoadAnimations() {
     welcome.classList.toggle('left-animation');
     socialIcons.classList.toggle('fade-in');
     welcomeDescription.classList.toggle('left-animation');
-    logo.classList.toggle('fade-in');
+    logo.classList.toggle('top-animation');
     hiddenLinks.classList.toggle('top-animation');
-    menuBar.classList.toggle('fade-in');
+    menuBar.classList.toggle('top-animation');
 }
 
 function toggleActive() {
@@ -40,15 +41,20 @@ function toggleActive() {
 function toggleMenu() {
     if(!menuBar.classList.contains("active")){
         toggleActive();
-
+        html.style.overflow = "hidden";
+        links.style.visibility ="visible";
     } else {
         toggleActive();
+        html.style.overflow = "visible";
+        links.style.visibility ="hidden";
     }
 }
 
 function removeMenu() {
     if (links.classList.contains("active")) {
         toggleActive();
+        html.style.overflow = "visible";
+        html.style.scrollBehavior = "auto";
     }
 }
 
