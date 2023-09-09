@@ -55,6 +55,8 @@ function removeMenu() {
         toggleActive();
         html.style.overflow = "visible";
         html.style.scrollBehavior = "auto";
+        links.style.visibility ="hidden";
+
     }
 }
 
