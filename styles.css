@@ -372,6 +372,7 @@ a:visited {
 
 #message-label {
     margin-left: 20px;
+    margin-top: 8px;
 }
 
 #form-input input {
@@ -383,11 +384,28 @@ a:visited {
     outline: none;
 }
 
+#form-input input, #message-label {
+    padding: 0 30px;
+}
+
+.form-icons {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    row-gap: 40px;
+    position: relative;
+    top: 140px;
+    left: 20px;
+    width: fit-content;
+    font-size: 1.1rem;
+}
+
 ::placeholder, .form-group textarea, #form-input input, #contact-form{
     font-family: 'Montserrat', sans-serif;
 }
 
-::placeholder, .form-group textarea, #form-input input {
+::placeholder, .form-group textarea, #form-input input, #message-label{
     font-size: 17px;
 }
 
@@ -402,8 +420,8 @@ textarea::placeholder {
 }
 
 textarea {
-    outline: 1px solid var(--text-color);
-    margin-top: 5px;
+    outline: 2px solid var(--text-color);
+    margin-top: 15px;
     background-color: var(--body-color);
     color: var(--text-color);
 }
