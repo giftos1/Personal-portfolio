@@ -72,10 +72,6 @@ section {
     align-items: center;
 }
 
-.logo:hover {
-    transform: scale(1.05);
-}
-
 .icons {
     display: flex;
     justify-content: space-between;
@@ -164,11 +160,32 @@ section {
 
 .welcome-description {
     text-align: justify;
+    font-size: 1.1rem;
 }
 
 .welcome-description.left-animation, .welcome-text.left-animation{
     left: 0;
     opacity: 1;
+}
+
+.resume{
+    width: 150px;
+    height: 40px;
+    margin-left: 100px;
+    margin-top: 20px;
+    border-radius: 50px;
+    border: none;
+    background-color: #2b90e9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.resume:hover, .resume:active {
+    color: var(--text-color);
+    background-color: rgb(16, 86, 192)
 }
 
 #contacts {
@@ -212,7 +229,6 @@ section {
 .project-container{ 
     display: flex;
     align-items: center;
-    /* border: 2px solid rgb(149, 149, 189); */
     padding: 20px;
     column-gap: 40px;
     width: 700px;
@@ -242,11 +258,14 @@ section {
 
 .project img{
     border-radius: 20px;
+    /* width: 90%; */
 }
 
-.project img:hover {
-    border: 1px solid rgb(243, 243, 243);
-}
+/* .project img:hover {
+    transform: scale(1.1);
+    transition: transform 1s ease-in-out;
+    background-color: rgb(120, 144, 165);
+} */
 
 .reveal-description .tech-container {
     text-align: center;
