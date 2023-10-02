@@ -160,13 +160,19 @@ section {
 
 .travel-tracker, .bmi-calculator {
     position: relative;
-    left: -200px;
+    left: -50px;
     opacity: 0;
 }
 
 .survey-form, .quote-generator {
     position: relative;
-    right: -100px;
+    right: -50px;
+    opacity: 0;
+}
+
+.cipher {
+    position: relative;
+    bottom: -50px;
     opacity: 0;
 }
 
@@ -262,8 +268,21 @@ section {
 
 .project {
     text-align: center;
-    transition: 0.3s ease-in-out;
+    /* transition: 0.3s ease-in-out; */
     color: var(--text-color);
+    height: 280px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.project-title {
+    position: relative;
+    top: -180px;
+    opacity: 0;
+    width: 100px;
+    margin: auto;
+    transition: opacity 0.4s ease-in-out;
 }
 
 .project-description {
@@ -279,18 +298,27 @@ section {
 .project-description article {
     width: 280px;
     text-align: center;
-    /* border: 1px solid red; */
 }
 
 .project img{
-    border-radius: 20px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: transform .5s ease;
 }
 
-/* .project img:hover {
+.project:hover h2 {
+    opacity: 1;
+}
+
+.project:hover img{
     transform: scale(1.1);
-    transition: transform 1s ease-in-out;
-    background-color: rgb(120, 144, 165);
-} */
+}
+
+.project:hover img{
+    opacity: 0.6;
+}
+
 
 .reveal-description .tech-container {
     text-align: center;
@@ -612,6 +640,35 @@ input[type=submit]:hover {
 
     .contacts-heading h1 {
         font-size: 30px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .travel-tracker, .bmi-calculator {
+        left:  -10px;
+    }
+
+    .survey-form, .quote-generator {
+        right: -10px;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .project-button a {
+        position: relative;
+        top: -140px;
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+        font-family: 'Montserrat';
+        background-color: rgba(59, 71, 78, 0.89);
+    }
+
+    .project-button .button:hover {
+        background-color: #2b90e9;
+    }
+
+    .project:hover .project-button a {
+        opacity: 1;
     }
 }
 
