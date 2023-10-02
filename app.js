@@ -85,6 +85,7 @@ form.addEventListener('submit', function(event) {
 menuBar.addEventListener('click', toggleMenu);
 links.addEventListener('click', removeMenu);
 
+// readmore clicks on devices below 768px
 for (let i = 0; i < reveals.length; i++) {
     rightArrows[i].addEventListener('click', function() {
         if (!rightArrows[i].classList.contains('reveal')) {
@@ -129,6 +130,19 @@ function triggerRightAnimation(entries, observer) {
         }
     });
 }
+
+function triggerBottomAnimation(entries, observer) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            // When the image is in the viewport, animate it
+            entry.target.style.opacity = "1";
+            entry.target.style.bottom = "0";
+            entry.target.style.transition = "opacity 1s ease-in-out, bottom 1s ease-in-out";
+            observer.unobserve(entry.target); // Stop observing once animated
+        }
+    });
+}
+
 const triggerOptions = {
     root: null, // Use the viewport as the root
     rootMargin: "0px", // No margin
@@ -137,15 +151,18 @@ const triggerOptions = {
 
 const observer1 = new IntersectionObserver(triggerLeftAnimation, triggerOptions);
 const observer2 = new IntersectionObserver(triggerRightAnimation, triggerOptions);
+const observer3 = new IntersectionObserver(triggerBottomAnimation, triggerOptions);
 
 
 const travelTrackerContainer = document.querySelector(".travel-tracker");
 const bmiContainer = document.querySelector(".bmi-calculator");
 const surveyFormContainer = document.querySelector(".survey-form");
 const quoteContainer = document.querySelector(".quote-generator");
+const cipherContainer = document.querySelector(".cipher");
 
 // Start observing the image
 observer1.observe(travelTrackerContainer);
 observer1.observe(bmiContainer);
 observer2.observe(surveyFormContainer);
 observer2.observe(quoteContainer);
+observer3.observe(cipherContainer);
