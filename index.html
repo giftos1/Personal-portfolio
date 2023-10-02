@@ -7,8 +7,8 @@
     <script src="https://kit.fontawesome.com/3f441a95fd.js" crossorigin="anonymous"></script>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-</script>
-<script type="text/javascript">
+    </script>
+    <script type="text/javascript">
    (function(){
       emailjs.init("IsW8_CceYyNW6nbD3");
    })();
@@ -97,14 +97,15 @@
             Projects
         </div>
         <div class="projects-container">
-            <div class="project-container">
-                <div class="project travel-tracker">
+            <div class="project-container travel-tracker">
+                <div class="project">
                     <img src="./images/travel-tracker.png" alt="Travel Tracker Picture">
                     <h2 class="project-title">
                         Travel Tracker
                     </h2>
                 </div>
                 
+                <!-- for devices below 768px -->
                 <div class="project-description">
                     <div class="read-more">
                         <p class="read-text">Read more</p>
@@ -121,6 +122,8 @@
                             </li>
                         </ul>
                     </div>
+
+                    <!-- for devices above 768px -->
                     <article>
                         <ul>
                             <li>This program is a simple "travel tracker" that allows a user to track places they wish to visit and places they have already visited.</li>
@@ -150,8 +153,8 @@
                 </div>
             </div>
 
-            <div class="project-container">
-                <div class="project survey-form">
+            <div class="project-container survey-form">
+                <div class="project">
                     <img src="./images/form.jpg" alt="survey form picture">
                     <h2 class="project-title">
                         Survey Form
@@ -204,13 +207,15 @@
                 </div>  
             </div>
 
-            <div class="project-container">
-                <div class="project BMI-Calculator"> 
+            <div class="project-container bmi-calculator">
+                <div class="project "> 
                     <img src="./images/calculator.jpg" alt="BMI Calculator Picture">
                     <h2 class="project-title">
                         BMI Calculator
                     </h2>   
                 </div>
+
+                <!-- for devices under 768px -->
                 <div class="project-description">
                     <div class="read-more">
                         <p class="read-text">Read more</p>   
@@ -257,7 +262,7 @@
                 </div>     
             </div>
 
-            <div class="project-container">
+            <div class="project-container quote-generator">
                 <div class="project">
                     <img src="./images/quote-generator.png" alt="Quote Generator Picture">
                     <h2 class="project-title">
@@ -367,7 +372,7 @@
 
     </section>
     <section id="contacts" class="section">
-        <form action="#contacts" id="contact-form" onsubmit="sendMail()">
+        <form id="contact-form">
             <div class="form-container">
                 <div class="contacts-heading">
                     <h1>Let's work together!</h1>
@@ -381,10 +386,10 @@
                         <i class="fa-solid fa-message" style="color: #d4e9fc;"></i>
                     </div>
                     <div class="inputs">
-                        <input type="text" id="name" placeholder="name" autocomplete="name" required>
-                        <input type="email" id="email" placeholder="email" autocomplete="email" required>
+                        <input type="text" id="name" placeholder="name" autocomplete="name" class="input" required>
+                        <input type="email" id="email" placeholder="email" autocomplete="email" class="input" required>
                         <label for="message" id="message-label">Message </label>
-                        <textarea cols="70" rows="7" placeholder="Enter your message here..." id="message" required></textarea>
+                        <textarea cols="70" rows="7" placeholder="Enter your message here..." id="message" class="input" required></textarea>
                     </div>
                    
                 </div>
