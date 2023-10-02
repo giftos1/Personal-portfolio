@@ -158,12 +158,24 @@ section {
     opacity: 0;
 }
 
+.travel-tracker, .bmi-calculator {
+    position: relative;
+    left: -200px;
+    opacity: 0;
+}
+
+.survey-form, .quote-generator {
+    position: relative;
+    right: -100px;
+    opacity: 0;
+}
+
 .welcome-description {
     text-align: justify;
     font-size: 1.1rem;
 }
 
-.welcome-description.left-animation, .welcome-text.left-animation{
+.welcome-description.left-animation, .welcome-text.left-animation {
     left: 0;
     opacity: 1;
 }
