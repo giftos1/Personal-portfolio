@@ -14,6 +14,8 @@ const readMores = document.querySelectorAll('.read-text');
 const reveals= document.querySelectorAll('.reveal-description');
 const html = document.querySelector('html');
 const body = document.querySelector('body');
+const form = document.getElementById('contact-form');
+const formInputs = document.querySelectorAll('.input');
 
 
 window.onload = function () {
@@ -56,29 +58,29 @@ function removeMenu() {
         html.style.overflow = "visible";
         html.style.scrollBehavior = "auto";
         links.style.visibility ="hidden";
-
     }
 }
 
-function sendMail() {
+// emailJs api
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
     let templateParams = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value,
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
     }
-    const serviceID = "service_k76odi8";
-    const templateID = "template_qf0rmz5";
-
-    emailjs.send(serviceID, templateID, templateParams).then(
-        res => {
-            document.getElementById('name').value ="";
-            document.getElementById('email').value ="";
-            document.getElementById('message').value ="";
-            console.log(res);
+    
+    emailjs.send('contact_service', 'contact_form', templateParams)
+        .then(function() {
+            console.log('SUCCESS!');
             alert("Your message has been sent successfully");
-        }
-    ).catch((error) => console.log(error));
-}
+            formInputs.forEach(input => {
+                input.value = "";
+            });
+        }, function(error) {
+            console.log('FAILED...', error);
+        }); 
+});
 
 menuBar.addEventListener('click', toggleMenu);
 links.addEventListener('click', removeMenu);
@@ -102,6 +104,48 @@ for (let i = 0; i < reveals.length; i++) {
     }) 
 }
 
+// scrolls
 
-   
-        
+function triggerLeftAnimation(entries, observer) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            // When the image is in the viewport, animate it
+            entry.target.style.opacity = "1";
+            entry.target.style.left = "0";
+            entry.target.style.transition = "opacity 1s ease-in-out, left 1s ease-in-out";
+            observer.unobserve(entry.target); // Stop observing once animated
+        }
+    });
+}
+
+function triggerRightAnimation(entries, observer) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            // When the image is in the viewport, animate it
+            entry.target.style.opacity = "1";
+            entry.target.style.right = "0";
+            entry.target.style.transition = "opacity 1s ease-in-out, right 1s ease-in-out";
+            observer.unobserve(entry.target); // Stop observing once animated
+        }
+    });
+}
+const triggerOptions = {
+    root: null, // Use the viewport as the root
+    rootMargin: "0px", // No margin
+    threshold: 1 // Trigger when at 100% of the image is visible
+}
+
+const observer1 = new IntersectionObserver(triggerLeftAnimation, triggerOptions);
+const observer2 = new IntersectionObserver(triggerRightAnimation, triggerOptions);
+
+
+const travelTrackerContainer = document.querySelector(".travel-tracker");
+const bmiContainer = document.querySelector(".bmi-calculator");
+const surveyFormContainer = document.querySelector(".survey-form");
+const quoteContainer = document.querySelector(".quote-generator");
+
+// Start observing the image
+observer1.observe(travelTrackerContainer);
+observer1.observe(bmiContainer);
+observer2.observe(surveyFormContainer);
+observer2.observe(quoteContainer);
