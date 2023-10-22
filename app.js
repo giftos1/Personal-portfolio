@@ -6,7 +6,6 @@ const links = document.querySelector('.links');
 const sections = document.querySelectorAll('.section');
 const welcome = document.querySelector('.welcome-text');
 const socialIcons = document.querySelector('.social-icons');
-const welcomeDescription = document.querySelector('.welcome-description');
 const logo = document.querySelector('.logo');
 const hiddenLinks = document.querySelector('.hidden-links');
 const rightArrows = document.querySelectorAll('.fa-arrow-right');
@@ -25,7 +24,6 @@ window.onload = function () {
 function onLoadAnimations() {
     welcome.classList.toggle('left-animation');
     socialIcons.classList.toggle('fade-in');
-    welcomeDescription.classList.toggle('left-animation');
     logo.classList.toggle('top-animation');
     hiddenLinks.classList.toggle('top-animation');
     menuBar.classList.toggle('top-animation');
@@ -146,7 +144,7 @@ function triggerBottomAnimation(entries, observer) {
 const triggerOptions = {
     root: null, // Use the viewport as the root
     rootMargin: "0px", // No margin
-    threshold: 1 // Trigger when at 100% of the image is visible
+    threshold: 0.6 // Trigger when at 60% of the image is visible
 }
 
 const observer1 = new IntersectionObserver(triggerLeftAnimation, triggerOptions);
