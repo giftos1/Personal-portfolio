@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Qwitcher+Grypen:wght@700&family=Roboto:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300&family=Qwitcher+Grypen:wght@700&family=Roboto:ital,wght@1,300&display=swap');
 
 * {
     margin: 0;
@@ -142,20 +143,85 @@ section {
 }
 
 .home-container {
-    margin-left: 40px;
-    width: 400px;
+    /* margin: auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    /* border: 1px solid red; */
 }
 
 .welcome-text {
     font-size: 2.7rem;
+    line-height: 1.5;
 }
 
-.welcome-description, .welcome-text {
+.job-title {
+    color: var(--text-color);
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.welcome-text {
     color: var(--text-color);
     transition: opacity 1s ease-in-out, left 1s ease-in-out;
     position: relative;
     left: -100px;
     opacity: 0;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-color);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    border-bottom: 1px solid var(--text-color);
+    border-top: 1px solid var(--text-color);
+    padding: 70px 0;
+    margin-bottom: 40px;
+}
+
+.page-title {
+    color: var(--text-color);
+    text-align: center;
+    font-size: 2rem;
+}
+
+.about-content-container {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.about-image img {
+    width: 250px;
+    height: 200px;
+}
+
+.about-description {
+    width: 250px;
+}
+
+.about-1, .about-2, .about-image-container {
+    padding-top: 40px;
+}
+
+.about-1, .about-2 {
+    line-height: 1.8;
+}
+
+.about-1 {
+    font-size: 18px;
 }
 
 .travel-tracker, .bmi-calculator {
@@ -176,12 +242,7 @@ section {
     opacity: 0;
 }
 
-.welcome-description {
-    text-align: justify;
-    font-size: 1.1rem;
-}
-
-.welcome-description.left-animation, .welcome-text.left-animation {
+.welcome-text.left-animation {
     left: 0;
     opacity: 1;
 }
@@ -189,9 +250,7 @@ section {
 .resume {
     width: 150px;
     height: 40px;
-    margin: auto;
     /* margin-left: 100px; */
-    margin-top: 20px;
     border-radius: 50px;
     border: none;
     background-color: #2b90e9;
@@ -205,13 +264,6 @@ section {
 .resume:hover, .resume:active {
     color: var(--text-color);
     background-color: rgb(16, 86, 192);
-}
-
-.projects-title {
-    text-align: center;
-    padding: 20px 0;
-    font-size: 2rem;
-    color: var(--text-color);
 }
 
 .tech-title {
@@ -268,7 +320,6 @@ section {
 
 .project {
     text-align: center;
-    /* transition: 0.3s ease-in-out; */
     color: var(--text-color);
     height: 280px;
     border-radius: 20px;
@@ -357,9 +408,12 @@ section {
     opacity: 1;
 }
 
+.welcome-text, .social-icons {
+    padding-bottom: 10px;
+}
+
 .social-icons {
     font-size: 2em;
-    margin: 20px 0;
     width: fit-content;
     color: rgb(123, 135, 161);
     opacity: 0;
@@ -421,6 +475,8 @@ a:visited {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    row-gap: 50px;
 }
 
 #contact-form {
@@ -651,6 +707,18 @@ input[type=submit]:hover {
     .survey-form, .quote-generator {
         right: -10px;
     }
+
+    #contact-form {
+        border: 1px solid rgb(195, 195, 214);
+    }
+
+    #form-input input {
+        border-bottom: 1px solid var(--text-color);
+    }
+
+    textarea {
+        outline: 1px solid var(--text-color);
+    }
 }
 
 @media screen and (min-width:1024px) {
@@ -659,7 +727,8 @@ input[type=submit]:hover {
         top: -140px;
         opacity: 0;
         transition: opacity 0.4s ease-in-out;
-        font-family: 'Montserrat';
+        /* font-family: 'Montserrat'; */
+        font-family: 'Poppins', Montserrat, sans-serif;
         background-color: rgba(59, 71, 78, 0.89);
     }
 
