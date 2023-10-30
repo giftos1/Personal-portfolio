@@ -1,7 +1,7 @@
 
 const menuBar = document.querySelector('.menu-bar');
 const bar = document.querySelector('.bar');
-const navBar = document.querySelector('.navbar');
+const navbar = document.querySelector('#navbar');
 const links = document.querySelector('.links');
 const sections = document.querySelectorAll('.section');
 const welcome = document.querySelector('.welcome-text');
@@ -15,6 +15,9 @@ const html = document.querySelector('html');
 const body = document.querySelector('body');
 const form = document.getElementById('contact-form');
 const formInputs = document.querySelectorAll('.input');
+const home = document.querySelector('#welcome-section');
+const about = document.querySelector('#about');
+
 
 
 window.onload = function () {
@@ -32,7 +35,7 @@ function onLoadAnimations() {
 function toggleActive() {
     links.classList.toggle('active');
     menuBar.classList.toggle('active');
-    navBar.classList.toggle('active');
+    navbar.classList.toggle('active');
     sections.forEach((section) => {
         section.classList.toggle('active');
     });
@@ -43,6 +46,7 @@ function toggleMenu() {
         toggleActive();
         html.style.overflow = "hidden";
         links.style.visibility ="visible";
+        body.style.backgroundColor = 'var(--body-color)';
     } else {
         toggleActive();
         html.style.overflow = "visible";
@@ -54,7 +58,6 @@ function removeMenu() {
     if (links.classList.contains("active")) {
         toggleActive();
         html.style.overflow = "visible";
-        html.style.scrollBehavior = "auto";
         links.style.visibility ="hidden";
     }
 }
@@ -105,6 +108,20 @@ for (let i = 0; i < reveals.length; i++) {
 
 // scrolls
 
+function changeBackgroundColor() {
+    let scrollValue = window.scrollY;
+
+    if (scrollValue >= 100) {
+        navbar.style.backgroundColor = 'var(--body-color)';
+    } else {
+        navbar.style.backgroundColor = 'transparent';
+        
+    }
+    console.log(scrollValue);
+}
+
+window.addEventListener('scroll', changeBackgroundColor)
+
 function triggerLeftAnimation(entries, observer) {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -150,6 +167,7 @@ const triggerOptions = {
 const observer1 = new IntersectionObserver(triggerLeftAnimation, triggerOptions);
 const observer2 = new IntersectionObserver(triggerRightAnimation, triggerOptions);
 const observer3 = new IntersectionObserver(triggerBottomAnimation, triggerOptions);
+// const homeObserver = new IntersectionObserver(changeBackground2, homeOptions);
 
 
 const travelTrackerContainer = document.querySelector(".travel-tracker");
