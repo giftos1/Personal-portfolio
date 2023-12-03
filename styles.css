@@ -697,7 +697,7 @@ input[type=submit]:hover {
         flex-direction: column;
     }
 
-    .project-description article, #navbar.hidden-links{
+    .project-description article, #navbar .hidden-links{
         display: none;
     }
 
