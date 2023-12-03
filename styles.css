@@ -677,8 +677,7 @@ input[type=submit]:hover {
 }
 
 @media screen and (max-width:768px) {
-    #navbar
-.active {
+    #navbar.active {
         display: flex;
         flex-direction: column;
         height: 90vh;
@@ -698,8 +697,7 @@ input[type=submit]:hover {
         flex-direction: column;
     }
 
-    .project-description article, #navbar
- .hidden-links{
+    .project-description article, #navbar.hidden-links{
         display: none;
     }
 
