@@ -84,10 +84,6 @@ section {
     padding: 0 10px;
 }
 
-.links {
-    color: var(--hover-color);
-}
-
 .outer-circle {
     height: 40px;
     width: 40px;
@@ -113,6 +109,10 @@ section {
 
 .inner-circle p {
     font-size: 1.6rem;
+}
+
+.links a {
+    color: var(--text-color);
 }
 
 #navbar .links {
@@ -442,10 +442,6 @@ section {
     opacity: 1;
 }
 
-a:visited {
-    color: inherit;
-}
-
 .fa-brands:hover, .fa-envelope:hover {
     color: rgb(0, 217, 255);
 }
@@ -701,7 +697,7 @@ input[type=submit]:hover {
         flex-direction: column;
         height: 90vh;
     }
-
+    
     .home-container {
         width:80%;
         margin: auto;
