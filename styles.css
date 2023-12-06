@@ -149,6 +149,10 @@ section {
     /* border: 1px solid red; */
 }
 
+.home-container a {
+    color: black;
+}
+
 .job-title {
     color: var(--text-color);
     font-size: 22px;
@@ -254,10 +258,8 @@ section {
 .resume {
     width: 150px;
     height: 40px;
-    /* margin-left: 100px; */
     border-radius: 50px;
     border: none;
-    /* background-color: #2b90e9; */
     background-color: #8dc9fd;
     display: flex;
     justify-content: center;
@@ -402,7 +404,7 @@ section {
     color: rgb(255, 255, 255);
 }
 
-.hidden-links, .links {
+.hidden-links a, ul.links.active a{
     color: var(--text-color);
 }
 
@@ -428,9 +430,12 @@ section {
 .social-icons {
     font-size: 2em;
     width: fit-content;
-    color: var(--text-color);
     opacity: 0;
     transition: opacity 1s ease-in;
+}
+
+.social-icons i {
+    color: var(--text-color);
 }
 
 .social-icons.fade-in {
@@ -439,11 +444,6 @@ section {
 
 a:visited {
     color: inherit;
-}
-
-.fa-envelope, .fa-linkedin {
-    cursor: pointer;
-    color: var(--text-color);
 }
 
 .fa-brands:hover, .fa-envelope:hover {
