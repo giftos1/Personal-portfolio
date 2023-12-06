@@ -228,8 +228,12 @@ section {
     opacity: 0;
 }
 
-.survey-form .stack-container{
-    gap: 40px;
+.survey-form .stack-container {
+    gap: 45px;
+}
+
+.survey-form .project-icons .fa-css3{
+    margin-left: 18px;
 }
 
 .cipher .project-icons {
