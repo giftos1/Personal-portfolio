@@ -1,6 +1,5 @@
 
 const menuBar = document.querySelector('.menu-bar');
-const bar = document.querySelector('.bar');
 const navbar = document.querySelector('#navbar');
 const links = document.querySelector('.links');
 const sections = document.querySelectorAll('.section');
@@ -15,9 +14,8 @@ const html = document.querySelector('html');
 const body = document.querySelector('body');
 const form = document.getElementById('contact-form');
 const formInputs = document.querySelectorAll('.input');
-const home = document.querySelector('#welcome-section');
-const about = document.querySelector('#about');
-
+document.querySelector('#welcome-section');
+document.querySelector('#about');
 
 
 window.onload = function () {
